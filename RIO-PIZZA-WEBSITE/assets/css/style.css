@@ -1,0 +1,266 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+}
+
+.text-dark {
+  color: #111;
+}
+
+.text-wine {
+  color: #7b1e3b;
+}
+
+.site-title, .text-dark, .text-wine {
+  font-weight: 900 !important;
+}
+
+.main-header {
+  background-color: #fff;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: center;
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-title {
+  all: unset;
+  font-size: 2rem;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.site-link {
+  text-decoration: none;
+  display: flex;
+  gap: 5px;
+  color: #111;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: #111;
+  text-decoration: none;
+  transition: color 0.3s;
+  padding: 0.5rem 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #7b1e3b;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 21px;
+  justify-content: space-between;
+}
+
+.bar {
+  height: 3px;
+  background: #7b1e3b;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+.hero-section {
+  position: relative;
+  min-height: calc(100vh - 100px);
+  padding: 120px 0;
+  background-image: url("../imgs/pizza-spread.avif");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 0 5%;
+}
+
+.text-content {
+  flex: 1;
+  padding-right: 20px;
+  animation: slideInLeft 1.2s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.sub-title {
+  color: #e0c800;
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 15px 0;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  color: #eee;
+}
+
+.btn-reserve {
+  padding: 12px 24px;
+  background-color: #fae21c;
+  color: #111;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-reserve:hover {
+  background-color: #e0c800;
+}
+
+.main-footer,
+.footer {
+  background-color: #fff;
+  color: #111;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: auto;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.05);
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: #111;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #7b1e3b;
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: flex;
+    margin-left: auto;
+    position: relative;
+    z-index: 1100;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background-color: #fff;
+    height: calc(100vh - 60px);
+    width: 250px;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 1.5rem;
+    box-shadow: -2px 0 12px rgba(0,0,0,0.15);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1099;
+    overflow-y: auto;
+  }
+
+  .menu-toggle:checked + .menu-icon + .main-nav .nav-links {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .sub-title {
+    font-size: 12px;
+  }
+}

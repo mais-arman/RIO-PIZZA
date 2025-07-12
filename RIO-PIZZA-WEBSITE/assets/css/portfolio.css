@@ -1,0 +1,106 @@
+    .portfolio-hero {
+    background: url('https://www.elaosboa.com/wp-content/uploads/2023/08/elaosboa01298.jpeg') no-repeat center center/cover;
+    padding: 100px 20px 50px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    }
+
+    .portfolio-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0,0,0,0.45);
+    }
+
+    .portfolio-hero .portfolio-hero-content {
+    position: relative;
+    z-index: 2;
+    }
+
+    .portfolio-title {
+    font-size: 48px;
+    margin-bottom: 10px;
+    }
+
+    .portfolio-description {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
+    }
+
+    .portfolio-list {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    }
+
+    .portfolio-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+    }
+
+    .portfolio-row:hover {
+    transform: scale(1.02);
+    }
+
+    .portfolio-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    }
+
+    .portfolio-text {
+    flex: 1;
+    min-width: 250px;
+    }
+
+    .portfolio-text h3 {
+    color: #7b1e3b;
+    margin-bottom: 10px;
+    }
+
+    .portfolio-text p {
+    font-size: 15px;
+    color: #444;
+    }
+
+    @media (max-width: 900px) {
+    .portfolio-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .portfolio-image {
+        width: 100%;
+        height: auto;
+        max-height: 300px;
+    }
+    .portfolio-text {
+        min-width: auto;
+        width: 100%;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .portfolio-title {
+        font-size: 32px;
+    }
+    .portfolio-description {
+        font-size: 16px;
+        max-width: 100%;
+    }
+    .portfolio-image {
+        max-height: 200px;
+    }
+    }

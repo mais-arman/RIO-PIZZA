@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RIO PIZZA | Reservation</title> 
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/reservation.css">
+  <link rel="icon" type="image/png" href="assets/imgs/favicon.png">
+</head>
+
+<body>
+
+  <section class="hero-reserve">
+    <span class="hero-sub-title">About Our Restaurant</span>
+    <h1 class="hero-heading">Book A Table</h1>
+  </section>
+
+  <section class="reservation-form-wrapper">
+    <h2 class="visually-hidden">Reservation Form</h2>
+    <form class="reservation-form" action="../index.html" method="get">
+      <div class="form-row">
+        <div class="form-group">
+          <select required>
+            <option value="" disabled selected>Person</option>
+            <option value="2">Person 2</option>
+            <option value="3">Person 3</option>
+            <option value="4">Person 4</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <input type="date" required>
+        </div>
+        <div class="form-group">
+          <input type="time" required>
+        </div>
+      </div>
+      <button type="submit" class="book-btn">Book Now</button>
+    </form>
+  </section>
+
+</body>
+</html>

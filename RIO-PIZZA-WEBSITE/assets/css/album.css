@@ -1,0 +1,197 @@
+    .hero-album {
+    background: url('https://www.elaosboa.com/wp-content/uploads/2023/08/elaosboa01298.jpeg') no-repeat center center/cover;
+    padding: 100px 20px 50px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    }
+
+    .hero-album::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-album .hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;     
+    justify-content: center; 
+    min-height: 100%;
+    }
+
+    .album-title {
+    font-size: 48px;
+    margin-bottom: 10px;
+    }
+
+    .album-description {
+    font-size: 18px;
+    max-width: 700px;
+    margin: auto;
+    }
+
+    .album-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 1rem auto;
+    padding: 0 10px;
+    height: calc(100vh - 70px);
+    }
+
+    .left-column,
+    .right-column {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    }
+
+    .right-column {
+    flex-direction: column;
+    }
+
+    .center-column {
+    padding: 10px;
+    box-shadow: none !important;
+    }
+
+    .album-image-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    flex: 1 1 48%;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .album-image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    transition: transform 0.3s;
+    }
+
+    .album-image-card:hover img {
+    transform: scale(1.05);
+    }
+
+    .album-image-card:hover:not(.center-column) {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 0.3s;
+    }
+
+    .album-image-card:hover .overlay {
+    opacity: 1;
+    pointer-events: auto;
+    user-select: auto;
+    }
+
+    .overlay .price {
+    color: #fae21c;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    }
+
+    .overlay .btn-order {
+    background-color: #fae21c;
+    color: #000;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    }
+
+    .overlay .btn-order:hover {
+    background-color: #e0c814;
+    }
+
+    .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+    }
+
+    @media (max-width: 900px) {
+    .album-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .left-column,
+    .center-column,
+    .right-column {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .album-image-card {
+        flex: 1 1 100%;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+    }
+
+    @media (max-width: 480px) {
+    .album-title {
+        font-size: 32px;
+    }
+
+    .album-description {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .overlay .price {
+        font-size: 1rem;
+    }
+
+    .overlay .btn-order {
+        padding: 6px 16px;
+        font-size: 0.9rem;
+    }
+    }
